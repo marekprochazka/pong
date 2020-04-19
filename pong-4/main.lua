@@ -16,7 +16,7 @@
 
     This version is built to more closely resemble the NES than
     the original Pong machines or the Atari 2600 in terms of
-    resolution, though in widescreen (16:9) so it looks nicer on 
+    resolution, though in widescreen (16:9) so it looks nicer on
     modern systems.
 ]]
 
@@ -69,6 +69,7 @@ function love.load()
 
     -- math.random returns a random value between the left and right number
     ballDX = math.random(2) == 1 and 100 or -100
+
     ballDY = math.random(-50, 50)
 
     -- game state variable used to transition between different parts of the game
@@ -78,7 +79,7 @@ function love.load()
 end
 
 --[[
-    Runs every frame, with "dt" passed in, our delta in seconds 
+    Runs every frame, with "dt" passed in, our delta in seconds
     since the last frame, which LÖVE2D supplies us.
 ]]
 function love.update(dt)
@@ -114,7 +115,7 @@ function love.update(dt)
 end
 
 --[[
-    Keyboard handling, called by LÖVE2D each frame; 
+    Keyboard handling, called by LÖVE2D each frame;
     passes in the key we pressed so we can access.
 ]]
 function love.keypressed(key)
@@ -129,7 +130,7 @@ function love.keypressed(key)
             gameState = 'play'
         else
             gameState = 'start'
-            
+
             -- start ball's position in the middle of the screen
             ballX = VIRTUAL_WIDTH / 2 - 2
             ballY = VIRTUAL_HEIGHT / 2 - 2
@@ -144,7 +145,7 @@ function love.keypressed(key)
 end
 
 --[[
-    Called after update by LÖVE2D, used to draw anything to the screen, 
+    Called after update by LÖVE2D, used to draw anything to the screen,
     updated or otherwise.
 ]]
 function love.draw()
@@ -153,7 +154,7 @@ function love.draw()
 
     -- clear the screen with a specific color; in this case, a color similar
     -- to some versions of the original Pong
-    love.graphics.clear(40, 45, 52, 255)
+    -- love.graphics.clear(40, 45, 52, 255)
 
     -- draw different things based on the state of the game
     love.graphics.setFont(smallFont)
